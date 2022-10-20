@@ -29,8 +29,9 @@ classdef KRVEA < ALGORITHM
             %% Generate the reference points and population
             [V0,Problem.N] = UniformPoint(Problem.N,Problem.M);
             V     = V0;
-            NI    = 11*Problem.D-1;
-            P     = UniformPoint(NI,Problem.D,'Latin');
+            NI    = 5*Problem.D;
+            seed = Algorithm.parameter{1};
+            P = LHSLoader(NI, Problem.D, seed);
             A2    = SOLUTION(repmat(Problem.upper-Problem.lower,NI,1).*P+repmat(Problem.lower,NI,1));
             A1    = A2;  
             THETA = 5.*ones(Problem.M,Problem.D);

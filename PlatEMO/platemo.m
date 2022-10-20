@@ -77,11 +77,12 @@ function varargout = platemo(varargin)
             [PRO,input] = getSetting(varargin);
             Problem     = PRO(input{:});
             [ALG,input] = getSetting(varargin,Problem);
-            if nargout > 0
-                Algorithm = ALG(input{:},'save',-1);
-            else
-                Algorithm = ALG(input{:});
-            end
+%             if nargout > 0
+%                 Algorithm = ALG(input{:},'save',-1);
+%             else
+%                 Algorithm = ALG(input{:});
+%             end
+            Algorithm = ALG(input{:});
             Algorithm.Solve(Problem);
             if nargout > 0
                 P = Algorithm.result{end};

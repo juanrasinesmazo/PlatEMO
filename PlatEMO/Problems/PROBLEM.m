@@ -54,6 +54,9 @@ classdef PROBLEM < handle & matlab.mixin.Heterogeneous
         optimum;                       	% Optimal values of the problem
         PF;                          	% Image of Pareto front
         parameter = {};                	% Other parameters of the problem
+        f_num;
+        problem_suite;
+
     end
     methods(Access = protected)
         function obj = PROBLEM(varargin)
