@@ -16,8 +16,8 @@ algorithm = 'CSEA';  % 'KRVEA', 'CSEA'
 
 % Problem parameters
 % prob_name = {'ZDT1', 'ZDT2'}; % , 'ZDT3', 'ZDT4', 'ZDT6'};  
-% prob_name = {'ZDT3', 'ZDT4'};
-prob_name = {'ZDT1'};
+prob_name = {'ZDT1', 'ZDT2', 'ZDT3', 'ZDT4', 'ZDT6'};
+% prob_name = {'ZDT1'};
 % prob_name = {'BIOBJ_1',  'BIOBJ_4',  'BIOBJ_6',  'BIOBJ_7', ...
 %              'BIOBJ_28', 'BIOBJ_30', 'BIOBJ_31', 'BIOBJ_33', ...
 %              'BIOBJ_41', 'BIOBJ_46', 'BIOBJ_54'};
@@ -125,7 +125,8 @@ for pb = prob_name
         writematrix(igd_mat, full_savepath)
     
         % Save data in some readable form
-        gen_arr = [n_lhs, 5*ones(1, length(n_eval)-1)];
+%         gen_arr = [n_lhs, 5*ones(1, length(n_eval)-1)];
+        gen_arr = [n_eval(1), n_eval(2:end) - n_eval(1:end-1)];
         index_arr = zeros(length(x_vars), 1);
         count = 1;
         gen_num = 0;
