@@ -125,7 +125,8 @@ for pb = prob_name
         writematrix(igd_mat, full_savepath)
     
         % Save data in some readable form
-        gen_arr = [n_lhs, 5*ones(1, length(n_eval)-1)];
+%         gen_arr = [n_lhs, 5*ones(1, length(n_eval)-1)];
+        gen_arr = [n_eval(1), n_eval(2:end) - n_eval(1:end-1)];
         index_arr = zeros(length(x_vars), 1);
         count = 1;
         gen_num = 0;
