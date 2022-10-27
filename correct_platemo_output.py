@@ -11,10 +11,11 @@ in_basepath = '/home/juan/PycharmProjects/optimisation_framework/PlatEMO/PlatEMO
 out_basepath = '/home/juan/Documents/Juan/shared_dir/'
 
 # Input Parameters
-algorithm = 'krvea_final'
+# algorithm = 'krvea_final'
+algorithm = 'csea_final'
 
 n_obj = 2
-dim = 40
+dim = 10
 n_lhs = 5 * dim
 max_gen = 25 * dim
 
@@ -28,7 +29,8 @@ for problem in problem_list:
 
         try:
             filename = f"{problem.lower()}_{algorithm.lower()}_maxgen_{max_gen}_sampling_{n_lhs}_seed_{seed}"
-            mat_path = f"{in_basepath}/KRVEA/{filename}_population.txt"
+            # mat_path = f"{in_basepath}/KRVEA/{filename}_population.txt"
+            mat_path = f"{in_basepath}/CSEA/{filename}_population.txt"
 
             # Load in mat file
             population = np.loadtxt(mat_path, delimiter=',')
