@@ -24,11 +24,12 @@ classdef CSEA < ALGORITHM
         function main(Algorithm,Problem)
             %% Parameter setting
             [k,gmax] = Algorithm.ParameterSet(6,3000);
+            k = 6;
 
             %% Initalize the population by Latin hypercube sampling
             N          = 5*Problem.D;
             seed = Algorithm.parameter{1};
-            PopDec     = LHSLoader(NI, Problem.D, seed);
+            PopDec     = LHSLoader(N, Problem.D, seed);
             Population = SOLUTION(repmat(Problem.upper-Problem.lower,N,1).*PopDec+repmat(Problem.lower,N,1));
             Arc        = Population;
 

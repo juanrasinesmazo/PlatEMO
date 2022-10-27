@@ -15,15 +15,15 @@ clear
 algorithm = 'CSEA';  % 'KRVEA', 'CSEA'
 
 % Problem parameters
-% prob_name = {'ZDT1', 'ZDT2'}; % , 'ZDT3', 'ZDT4', 'ZDT6'};  
+prob_name = {'ZDT1', 'ZDT2', 'ZDT3', 'ZDT4', 'ZDT6'};  
 % prob_name = {'ZDT3', 'ZDT4'};
-prob_name = {'ZDT1'};
+% prob_name = {'ZDT1'};
 % prob_name = {'BIOBJ_1',  'BIOBJ_4',  'BIOBJ_6',  'BIOBJ_7', ...
 %              'BIOBJ_28', 'BIOBJ_30', 'BIOBJ_31', 'BIOBJ_33', ...
 %              'BIOBJ_41', 'BIOBJ_46', 'BIOBJ_54'};
 % prob_name = {'BIOBJ_1'};
 n_obj = 2; 
-dim = 10;
+dim = 20;
 
 % Generational multipliers & parameters
 LHS = 5;
@@ -48,8 +48,8 @@ for pb = prob_name
         %         'maxFE', n_max,  'save', (n_max-n_lhs), 'outputFcn', @ALGORITHM.Output);
         
         % Collect Output & Save
-        outpath = sprintf('/home/juan/PycharmProjects/optimisation_framework/PlatEMO/PlatEMO/Data/%s/', algorithm);
-        savepath = '/home/juan/Documents/Juan/shared_dir/';
+        outpath = sprintf('/home/juan/PycharmProjects/optimisation_framework/PlatEMO/PlatEMO/Data/%s/', algorithm);       % DRIES CHANGE HERE   (Must be location of where PlatEMO is installed)
+        savepath = '/home/juan/Documents/Juan/shared_dir/';                                                               % DRIES CHANGE HERE   (Location to output files - can be same as outpath)
         filename = sprintf('%s_%s_M%.0f_D%.0f_%0.f.mat', algorithm, prob, n_obj, dim, seed+1);
         full_outpath = strcat(outpath, filename);
         
